@@ -18,15 +18,6 @@ steps {
 sh 'docker build -t pratap023/dev-repo .'
 }
 }
-        
-        stage('Output')
-        {
-          steps{
-            sh 'cd src/main/java/com/example'
-            sh 'javac App.java'
-            sh 'Java App.java'
-          }
-        }
 stage('Run Container') {
 steps {
 sh 'docker run -d --name java-container pratap023/dev-repo || true'
