@@ -29,5 +29,7 @@ sh 'docker run -d --name java-container pratap023/dev-repo || true'
             sh 'cd src/main/java/com/example'
             sh 'javac App.java'
             sh 'Java App.java'
+          }
+        }
 }
 }
