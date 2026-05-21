@@ -18,11 +18,7 @@ steps {
 sh 'docker build -t pratap023/dev-repo .'
 }
 }
-stage('Run Container') {
-steps {
-sh 'docker run -d --name java-container pratap023/dev-repo || true'
-}
-}
+        
         stage('Output')
         {
           steps{
@@ -31,5 +27,10 @@ sh 'docker run -d --name java-container pratap023/dev-repo || true'
             sh 'Java App.java'
           }
         }
+stage('Run Container') {
+steps {
+sh 'docker run -d --name java-container pratap023/dev-repo || true'
+}
+}
 }
 }
